@@ -121,6 +121,39 @@ public class Main {
         f = System.nanoTime();
         System.out.println("время LinkedList = " + (f - s));
 
+        System.out.println("Взятие элемента по индексу в начале");
+        s = System.nanoTime();
+        myListInt.get(0);
+        f = System.nanoTime();
+        System.out.println("время myList = " + (f - s));
+
+        s = System.nanoTime();
+        listInt.get(0);
+        f = System.nanoTime();
+        System.out.println("время LinkedList = " + (f - s));
+
+        System.out.println("Взятие элемента по индексу в середине");
+        s = System.nanoTime();
+        myListInt.get(size / 2);
+        f = System.nanoTime();
+        System.out.println("время myList = " + (f - s));
+
+        s = System.nanoTime();
+        listInt.get(size / 2);
+        f = System.nanoTime();
+        System.out.println("время LinkedList = " + (f - s));
+
+        System.out.println("Взятие элемента по индексу в конце");
+        s = System.nanoTime();
+        myListInt.get(size);
+        f = System.nanoTime();
+        System.out.println("время myList = " + (f - s));
+
+        s = System.nanoTime();
+        listInt.get(size);
+        f = System.nanoTime();
+        System.out.println("время LinkedList = " + (f - s));
+
         System.out.println("Поиск элемента в середине");
         myListInt.set(size / 2, null);
         s = System.nanoTime();

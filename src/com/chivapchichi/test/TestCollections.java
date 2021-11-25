@@ -37,7 +37,7 @@ public class TestCollections {
         testMap(new TreeMap<>());
     }
 
-    private static int size = 10000;
+    private static int size = 1000000;
 
     private static void testList(List<Integer> list) {
         Random rnd = new Random();
@@ -70,6 +70,28 @@ public class TestCollections {
 
         System.out.println("Взятие элемента в конце");
         getFromList(list, size - 1);
+
+        System.out.println("Поиск элемента в начале");
+        list.set(0, null);
+        indexOfList(list, null);
+        list.set(0, 1);
+
+        System.out.println("Поиск элемента в середине");
+        list.set(size / 2, null);
+        indexOfList(list, null);
+        list.set(size / 2, 1);
+
+        System.out.println("Поиск элемента в конце");
+        list.set(size - 1, null);
+        indexOfList(list, null);
+        list.set(size - 1, 1);
+    }
+
+    private static <T> void indexOfList(List<T> list, T element) {
+        long start = System.nanoTime();
+        list.indexOf(element);
+        long finish = System.nanoTime();
+        System.out.println("результат = " + (finish - start));
     }
 
     private static <T> void insertIntoList(List<T> list, int index,  T element) {
